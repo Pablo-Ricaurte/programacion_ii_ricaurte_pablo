@@ -1,3 +1,0 @@
-Usar ssh en github
-1. registrar ssh key
-1.1 ssh-keygen -t ed25519 -C "pgricaurte11@gmail.com" 
