@@ -1,5 +1,3 @@
 Usar ssh en github
 1. registrar ssh key
 1.1 ssh-keygen -t ed25519 -C "pgricaurte11@gmail.com" 
-
-crear un archivo gitignore para proyectos y subproyectos de repositorios local o de repositorios que abarque carpetas y subcarpetas basado en proyectos python, django, odoo
