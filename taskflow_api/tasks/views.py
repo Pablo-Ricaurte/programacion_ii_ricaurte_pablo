@@ -4,14 +4,21 @@ from django.urls import reverse
 
 # Create your views here.
 def home(request):
-    """Vista de bienvenidad de la app tasks"""
-    url_about = reverse("tasks:about")
-    return HttpResponse(f"La URL de la pagina About es: {url_about}")
-    # return HttpResponse(f"Hola, TaskFlow (método: {request.method})")
+    contexto = {
+        "titulo": "Gestor de tareas",
+        "mensaje": "Organiza tus proyectos y tareas en un solo lugar",
+        "total_tareas": 7,
+        "proyectos": [
+            "Rediseño web",
+            "Migracion de base de datos",
+            "Documentacion API"
+        ]
+    }
+    return render(request, "tasks/home.html", contexto)
 
 
 def about(request):
-    return HttpResponse("TaskFlow - gestor de tareas y proyectos")
+    return render(request, "tasks/about.html")
 
 def saludo(request, nombre):
     return HttpResponse(f"hola, {nombre}")

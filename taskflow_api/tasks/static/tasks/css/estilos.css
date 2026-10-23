@@ -1,0 +1,36 @@
+/* tasks/static/tasks/css/estilos.css */
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+.navbar {
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.navbar a {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+.contenido {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+ul li {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    list-style: none;
+    margin-bottom: 8px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}

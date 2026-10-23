@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block titulo %}Inicio — TaskFlow{% endblock %}
+
+{% block content %}
+    <h1>{{ titulo|upper }}</h1>
+    <p>{{ mensaje }}</p>
+
+    {% if total_tareas > 0 %}
+        <p>Tienes {{ proyectos|length }} tareas pendientes</p> 
+    {% else %}
+        <p>No tienes tareas pendientes</p>
+    {% endif %}
+
+    <ul>
+        {% for proyecto in proyectos %}
+            <li>{{ proyecto }}</li>
+        {% empty %}
+            <li>No hay proyectos disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
