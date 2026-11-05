@@ -1,27 +1,22 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.urls import reverse
+from django.shortcuts import render, redirect
+from .models import Paciente, PlanDietetico
+from .forms import PlanDieteticoForm
 
-# Create your views here.
 def home(request):
-    contexto = {
-        "titulo": "Gestor de tareas",
-        "mensaje": "Organiza tus proyectos y tareas en un solo lugar",
-        "total_tareas": 7,
-        "proyectos": [
-            "Rediseño web",
-            "Migracion de base de datos",
-            "Documentacion API"
-        ]
-    }
-    return render(request, "tasks/home.html", contexto)
+    return render(request, 'tasks/home.html')
 
 
-def about(request):
-    return render(request, "tasks/about.html")
+def lista_pacientes(request):
+    pacientes = Paciente.objects.all()
+    return render(request, 'tasks/pacientes.html', {'pacientes': pacientes})
 
-def saludo(request, nombre):
-    return HttpResponse(f"hola, {nombre}")
-
-def sumar(request, a, b):
-    return HttpResponse(f"{a} + {b} = {a + b}")
+def crear_plan_dietetico(request):
+    if request.method == 'POST':
+        form = PlanDieteticoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_pacientes')
+    
+    else:
+        form = PlanDieteticoForm()
+    return render(request, 'tasks/plan_form.html', {'form': form})
