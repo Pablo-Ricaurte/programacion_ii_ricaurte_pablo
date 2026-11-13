@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+
+<body>
+    <h1>Inicio</h1>
+    <p>Bienvenido Sr(a). {{ request.user.username }}. Aquí puedes gestionar tus libros y categorías.</p>
+    <p>Desde aquí puedes acceder a las diferentes secciones de la aplicación.</p>
+    <h2>Menú Principal</h2>
+    <ul>
+        <li><a href="{% url 'libro_list' %}">Libros</a></li>
+        <li><a href="{% url 'categoria_list' %}">Categorías</a></li>
+        <li><a href="{% url 'autor_list' %}">Autores</a></li>
+    </ul>
+    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+    </form>
+</body>
+
+</html>
+
+<!-- -administrador_rogeron	-	-	-	False
+	bibliotecario_usuario -->
