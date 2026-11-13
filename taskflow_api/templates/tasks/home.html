@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO DE PROYECTOS</title>
+</head>
+<body>
+    <p>Bienvenido a {{ titulo }}</p>
+    <p>{{ mensaje }}</p>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+        </tr>
+        {% for project in projects %}
+        <tr>
+            <td>{{ project.name }}</td>
+            <td>{{ project.description }}</td>
+            <td>{{ project.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
