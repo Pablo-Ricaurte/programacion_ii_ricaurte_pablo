@@ -1,6 +1,6 @@
 
 from django.urls import path
-from catalogo.views.categoria_view import (categoria_list, 
+from catalogo.views.categorias_view import (categoria_list, 
                                     categoria_create, 
                                     categoria_update, 
                                     categoria_delete,)  
