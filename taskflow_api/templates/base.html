@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block titulo %}TaskFlow{% endblock %}</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'tasks/css/estilos.css' %}">
+    <title>{% block title %}TaskFlow{% endblock %}</title>
 </head>
 <body>
-    <nav class="navbar">
-        <strong>TaskFlow</strong>
+    <nav>
         <a href="{% url 'tasks:home' %}">Inicio</a>
     </nav>
 
-    <main class="contenido">
-        {% block content %}{% endblock %}
+    <main>
+        {% block content %}
+        {% endblock %}
     </main>
 </body>
 </html>
